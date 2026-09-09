@@ -112,8 +112,12 @@ window.shareInvoicePdf=async function(){
     const file=new File([blob],built.filename,{type:'application/pdf'});
     const shareData={
       files:[file],
-      title:`Facture SOUL STREET ${built.inv}`,
-      text:`Bonjour,\n\nVeuillez trouver ci-joint votre facture SOUL STREET ${built.inv}.\n\nMerci.`
+      title:'Votre facture SOUL STREET',
+      text:`Ia’orana,
+
+Veuillez trouver votre facture SOUL STREET « ${built.inv} » en pièce jointe.
+
+Mauruuru pour votre confiance et à très bientôt !`
     };
     if(navigator.canShare && navigator.canShare({files:[file]}) && navigator.share){
       await navigator.share(shareData);
